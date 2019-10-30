@@ -12,6 +12,10 @@ const propTypes = {
   finalTranscript:PropTypes.string,
   browserSupportsSpeechRecognition: PropTypes.bool
 };
+const options = {
+  autoStart: false
+}
+
 
 const Dictaphone = ({
   // transcript,
@@ -32,19 +36,12 @@ const Dictaphone = ({
           <h1>Dictado de voz a texto</h1>
       </div>
       <div className="dictado__button">
-          <div>
-                <button className="dictado__buttonPlay" onClick={startListening}>START</button>
-          </div>
-          <div>
-                <button  className="dictado__buttonStop" onClick={stopListening}>STOP</button>
-          </div>
-          <div>
-               <button className="dictado__buttonReset" onClick={resetTranscript}>Reset</button>
-          </div>
+        
+        <button className="dictado__buttonPlay" onClick={startListening}>START</button>
+        <button  className="dictado__buttonStop" onClick={stopListening}>STOP</button>
+        <button className="dictado__buttonReset" onClick={resetTranscript}>Reset</button>
+        
 
-          
-         
-         
       </div>
       {/* <span>{transcript}</span> */}
       <div>
@@ -56,4 +53,5 @@ const Dictaphone = ({
 
 Dictaphone.propTypes = propTypes;
 
-export default SpeechRecognition(Dictaphone);
+// export default SpeechRecognition(Dictaphone);
+export default SpeechRecognition(options)(Dictaphone);

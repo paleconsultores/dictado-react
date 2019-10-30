@@ -1,22 +1,43 @@
-.App {
+.dictado{
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.dictado h1{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.buttonPlay{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2.05rem;
+  color:white;/*#4B75B8*/
+  font-weight: bold;
+  text-align: center;
+  background: green;
+  border: green;
+}
+.buttonStop{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2.05rem;
+  color:white;/*#4B75B8*/
+  font-weight: bold;
+  text-align: center;
+  background: red;
+  border:red;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.span{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2.05rem;
+  color:blue
+  
+}
+
+
+
+/* .{
+
   color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}
+} */

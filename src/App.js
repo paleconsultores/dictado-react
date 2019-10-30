@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import SpeechRecognition from "react-speech-recognition";
 
+import "./App.css"
 const propTypes = {
   // Props injected by SpeechRecognition
   // transcript: PropTypes.string,
@@ -26,12 +27,17 @@ const Dictaphone = ({
 
   
   return (
-    <div>
-      <button onClick={startListening}>startListening</button>
-      <button onClick={stopListening}>stopListening</button>
-      <button onClick={resetTranscript}>Reset</button>
+    <div className="dictado">
+      <h1>Dictado de voz a texto</h1>
+      <div>
+          <button className="buttonPlay" onClick={startListening}>START</button>
+          <button  className="buttonStop" onClick={stopListening}>STOP</button>
+          <button onClick={resetTranscript}>Reset</button>
+      </div>
       {/* <span>{transcript}</span> */}
-      <span>{finalTranscript}</span>
+      <div>
+          <span className="span">{finalTranscript}</span>
+      </div>
     </div>
   );
 };

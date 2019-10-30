@@ -28,11 +28,23 @@ const Dictaphone = ({
   
   return (
     <div className="dictado">
-      <h1>Dictado de voz a texto</h1>
       <div>
-          <button className="buttonPlay" onClick={startListening}>START</button>
-          <button  className="buttonStop" onClick={stopListening}>STOP</button>
-          <button onClick={resetTranscript}>Reset</button>
+          <h1>Dictado de voz a texto</h1>
+      </div>
+      <div className="dictado__button">
+          <div>
+                <button className="dictado__buttonPlay" onClick={startListening}>START</button>
+          </div>
+          <div>
+                <button  className="dictado__buttonStop" onClick={stopListening}>STOP</button>
+          </div>
+          <div>
+               <button className="dictado__buttonReset" onClick={resetTranscript}>Reset</button>
+          </div>
+
+          
+         
+         
       </div>
       {/* <span>{transcript}</span> */}
       <div>

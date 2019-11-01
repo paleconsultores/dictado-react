@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   display: grid;
-  grid-template-rows:1fr auto auto / minmax(200px, 1200px);
+  grid-template-rows:1fr auto auto auto/ minmax(200px, 1200px);
   height: auto;
   width: 100%;
   align-self: center;
@@ -56,6 +56,24 @@
   background:#00B6FF;
   border:#00B6FF;
 }
+.text_Area{
+    margin: 0 auto;
+    background:white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.60);
+    border-radius: 8px 8px 8px 8px;
+    overflow: hidden;
+    position: relative;
+    align-content: center;
+    align-items: center;
+    width: 400px;
+    height: auto;
+    padding-inline-start: 50px;
+    margin: 10px auto;
+}
+.text_Area textarea{
+  width: 390px;
+    height: auto;
+}
 .span{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 2.05rem;
@@ -64,8 +82,3 @@
 }
 
 
-
-/* .{
-
-  color: white;
-} */

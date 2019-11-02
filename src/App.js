@@ -9,20 +9,26 @@ class Dictaphone extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      names: ""
+      textArea: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-
+  __downloadTxtFile=()=>{
+    var element =document.createElement("a");
+    var file=new Blob([document.getElementById('textArea').value],{type:"text/plain"});
+    element.href=URL.createObjectURL(file);
+    element.download="textArea.txt";
+    element.click();
+  }
   handleSubmit = (e) => {
     e.preventDefault();
   }
 
   handleChange = (e) => {
     this.setState({
-      names: e.target.value
+      textArea: e.target.value
     });
 
   }
@@ -47,20 +53,24 @@ class Dictaphone extends Component {
                 
                 <button className="dictado__buttonPlay" onClick={startListening}>START</button>
                 <button  className="dictado__buttonStop" onClick={stopListening}>STOP</button>
-                <button className="dictado__buttonReset" onClick={resetTranscript}>Reset</button>
-                
+               
 
               </div>
               {/* <span>{transcript}</span> */}
               <div className="text_Area">
                   <textarea 
-                  id="names"
+                  id="textArea"
                   value={this.props.finalTranscript}
                   onChange={this.handleChange}
                   >
                   </textarea>
                   {/* <span className="span">{finalTranscript}</span> */}
               </div>
+              <div>
+                  <button className="dictado__buttonReset" onClick={resetTranscript}>Reset</button>
+                  <button className="dictado__buttonReset" onClick={this.__downloadTxtFile}>Save</button>
+              </div>
+
           </div>
 
       </div>

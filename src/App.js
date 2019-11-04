@@ -12,8 +12,6 @@ class Dictaphone extends Component {
       textArea: ""
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
   __downloadTxtFile=()=>{
     var element =document.createElement("a");
@@ -25,14 +23,12 @@ class Dictaphone extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
   }
-
-  handleChange = (e) => {
+  handleOnChange(event) {
     this.setState({
-      textArea: e.target.value
-    });
-
+      textArea: event.target.value
+    })
   }
-
+ 
   render() {
     const { finalTranscript,transcript, resetTranscript, browserSupportsSpeechRecognition,startListening,stopListening } = this.props
 
@@ -41,18 +37,22 @@ class Dictaphone extends Component {
     }
 
     return (
-      <div>
-        {/* <button onClick={resetTranscript}>Reset</button>
-        <span>{transcript}</span> */}
-
+  
           <div className="dictado">
               <div>
                   <h1>Dictado de voz a texto</h1>
               </div>
+              <div className="preloader_1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+              </div>
               <div className="dictado__button">
                 
-                <button className="dictado__buttonPlay" onClick={startListening}>START</button>
-                <button  className="dictado__buttonStop" onClick={stopListening}>STOP</button>
+                <button className="dictado__buttonPlay" onClick={startListening}>Start</button>
+                <button  className="dictado__buttonStop" onClick={stopListening}>Stop</button>
                
 
               </div>
@@ -60,18 +60,15 @@ class Dictaphone extends Component {
               <div className="text_Area">
                   <textarea 
                   id="textArea"
-                  value={this.props.finalTranscript}
-                  onChange={this.handleChange}
-                  >
-                  </textarea>
-                  {/* <span className="span">{finalTranscript}</span> */}
+                  defaultValue={finalTranscript}
+                  onChange={(event) => this.handleOnChange(event)}
+                  />
               </div>
-              <div>
+              <div className="dictado__button">
                   <button className="dictado__buttonReset" onClick={resetTranscript}>Reset</button>
-                  <button className="dictado__buttonReset" onClick={this.__downloadTxtFile}>Save</button>
+                  <button className="dictado__buttonSave" onClick={this.__downloadTxtFile}>Save</button>
               </div>
 
-          </div>
 
       </div>
     )
